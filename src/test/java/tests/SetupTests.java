@@ -8,6 +8,7 @@ import pageObjects.LoginPage;
 import utils.Browser;
 import utils.Utils;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @Feature("Testes do SISEL")
@@ -28,6 +29,15 @@ public class SetupTests extends BaseTests {
         loginPage.login();
         assertTrue(homePage.getTextPrincipal().equals("Principal"));
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/home")));
+    }
+
+    @Test
+    @Story("Verificar usuário logado")
+    public void testUserName() {
+        HomePage homePage = new HomePage();
+
+        testLogin();
+        assertTrue(homePage.isUserNameAdilson());
     }
 
 

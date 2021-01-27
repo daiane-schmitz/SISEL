@@ -13,4 +13,12 @@ public class HomePage extends HomePageElementMapper {
     public String getTextPrincipal(){
         return principal.getText();
     }
+
+    public String getUserName(){
+        return userName.getText();
+    }
+
+    public boolean isUserNameAdilson(){
+        return getUserName().contains("ADILSON");
+    }
 }

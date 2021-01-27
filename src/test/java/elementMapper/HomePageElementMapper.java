@@ -7,4 +7,7 @@ public class HomePageElementMapper {
 
     @FindBy(css = "div.navbar-wrapper > a")
     public WebElement principal;
+
+    @FindBy(id = "elementNavigation")
+    public WebElement userName;
 }
