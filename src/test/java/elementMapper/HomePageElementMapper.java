@@ -10,4 +10,8 @@ public class HomePageElementMapper {
 
     @FindBy(id = "elementNavigation")
     public WebElement userName;
+
+    @FindBy(css =  "div.sidebar-wrapper > ul > li:nth-child(2) > a > p")
+    public WebElement materialBtn;
+
 }

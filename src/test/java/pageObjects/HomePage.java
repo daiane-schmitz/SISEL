@@ -21,4 +21,8 @@ public class HomePage extends HomePageElementMapper {
     public boolean isUserNameAdilson(){
         return getUserName().contains("ADILSON");
     }
+
+    public void clickMaterialBtn(){
+        materialBtn.click();
+    }
 }
