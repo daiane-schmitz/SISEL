@@ -15,7 +15,7 @@ public class HomePage extends HomePageElementMapper {
     }
 
     public String getUserName(){
-        return userName.getText();
+        return nomeUsuario.getText();
     }
 
     public boolean isUserNameAdilson(){

@@ -10,15 +10,15 @@ public class LoginPage extends LoginPageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
     public void fillUser(){
-        user.sendKeys("hamme012");
+        usuario.sendKeys("hamme012");
     }
 
     public void fillPassword(){
-        password.sendKeys("Chesf2020");
+        senha.sendKeys("Chesf2020");
     }
 
     public void clickLoginBtn(){
-        loginBtn.click();
+        entrarBtn.click();
     }
 
     public void login(){

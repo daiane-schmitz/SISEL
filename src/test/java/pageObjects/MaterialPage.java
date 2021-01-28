@@ -23,68 +23,87 @@ public class MaterialPage extends MaterialPageElementMapper {
         addMaterialBtn.click();
     }
 
-    public void selectMaterialCategory(){
-        Select selectMaterialElement = new Select(materialCategory);
+    public void selectMaterialCategorySucata(){
+        Select selectMaterialElement = new Select(categoriaDoMaterial);
         selectMaterialElement.selectByValue("3");
     }
 
-    public void selectMaterialType(){
-        Select selectMaterialElement = new Select(materialType);
+    public void selectMaterialCategoryEquipamento(){
+        Select selectMaterialElement = new Select(categoriaDoMaterial);
+        selectMaterialElement.selectByValue("4");
+    }
+
+    public void selectMaterialTypeMetalica(){
+        Select selectMaterialElement = new Select(tipoDoMaterial);
         selectMaterialElement.selectByValue("3");
+    }
+
+    public void selectMaterialTypeDisjuntor(){
+        Select selectMaterialElement = new Select(tipoDoMaterial);
+        selectMaterialElement.selectByValue("8");
     }
 
     public void selectMaterialSubtype(){
-        Select selectMaterialElement = new Select(materialSubtype);
+        Select selectMaterialElement = new Select(subTipoDoMaterial);
         selectMaterialElement.selectByValue("14");
     }
 
     public void selectInstallation(){
-        Select selectMaterialElement = new Select(installation);
+        Select selectMaterialElement = new Select(instalacao);
         selectMaterialElement.selectByValue("1");
     }
 
     public void selectLinking(){
-        Select selectMaterialElement = new Select(linking);
+        Select selectMaterialElement = new Select(vinculacao);
         selectMaterialElement.selectByValue("2");
     }
 
-    public void selectDestination(){
-        Select selectMaterialElement = new Select(destination);
+    public void selectDestinationAlienacao(){
+        Select selectMaterialElement = new Select(destinacao);
+        selectMaterialElement.selectByValue("3");
+    }
+
+    public void selectDestinationEstoque(){
+        Select selectMaterialElement = new Select(destinacao);
         selectMaterialElement.selectByValue("2");
     }
 
     public void fillJustification(){
-        justification.sendKeys("Justificativa");
+        justificativa.sendKeys("Justificativa");
     }
 
     public void checkLocation(){
-        location.click();
+        localAlienacao.click();
     }
 
     public void selectInstallationWarehouse(){
-        Select selectMaterialElement = new Select(installationWarehouse);
+        Select selectMaterialElement = new Select(instalacaoAlmoxarifado);
         selectMaterialElement.selectByValue("4");
     }
 
     public void fillStaffRemoval(){
-        staffRemoval.sendKeys("Equipe");
+        equipeNecessariaParaRemocao.sendKeys("Equipe");
     }
 
     public void fillInfrastructureRemoval(){
-        infrastructureRemoval.sendKeys("Infraestrutura");
+        infrastruturaNecessariaParaRemocao.sendKeys("Infraestrutura");
     }
 
     public void fillRemovalCost(){
-        removalCost.sendKeys("1000");
+        custoAproximadoRemocao.sendKeys("100000");
     }
 
     public void selectSituation(){
-        Select selectSituation= new Select(situation);
+        Select selectSituation= new Select(situacao);
         selectSituation.selectByValue("true");
     }
 
+    public void clickPlusBtn(){
+        plusBtn.click();
+    }
+
     public void clickSaveBtn(){
-        saveBtn.click();
+        salvarBtn.click();
     }
 
     public String getTextAdicionado(){

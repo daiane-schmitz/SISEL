@@ -9,7 +9,7 @@ public class HomePageElementMapper {
     public WebElement principal;
 
     @FindBy(id = "elementNavigation")
-    public WebElement userName;
+    public WebElement nomeUsuario;
 
     @FindBy(css =  "div.sidebar-wrapper > ul > li:nth-child(2) > a > p")
     public WebElement materialBtn;

@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPageElementMapper {
 
     @FindBy(css = "div:nth-child(1) > input")
-    public WebElement user;
+    public WebElement usuario;
 
     @FindBy(css = "div:nth-child(2) > input")
-    public WebElement password;
+    public WebElement senha;
 
     @FindBy(css = "div > button")
-    public WebElement loginBtn;
+    public WebElement entrarBtn;
 }

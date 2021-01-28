@@ -12,46 +12,49 @@ public class MaterialPageElementMapper {
     public WebElement addMaterialBtn;
 
     @FindBy(css = "div:nth-child(1) > div:nth-child(1) > select")
-    public WebElement materialCategory;
+    public WebElement categoriaDoMaterial;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(1) > div:nth-child(2) > select")
-    public WebElement materialType;
+    public WebElement tipoDoMaterial;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(1) > div:nth-child(3) > select")
-    public WebElement materialSubtype;
+    public WebElement subTipoDoMaterial;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(2) > div:nth-child(1) > select")
-    public WebElement installation;
+    public WebElement instalacao;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(2) > div:nth-child(2) > select")
-    public WebElement linking;
+    public WebElement vinculacao;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(2) > div:nth-child(3) > select")
-    public WebElement destination;
+    public WebElement destinacao;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(3) > div > div > input")
-    public WebElement justification;
+    public WebElement justificativa;
 
     @FindBy(css = "#collapseOne > div > div:nth-child(4) > div > div > div:nth-child(1) > label")
-    public WebElement location;
+    public WebElement localAlienacao;
 
-    @FindBy(css = "div:nth-child(5) > div > select")
-    public WebElement installationWarehouse;
+    @FindBy(css = "#collapseOne > div > div:nth-child(4) > div > select")
+    public WebElement instalacaoAlmoxarifado;
+
+    @FindBy(css = "#headingTwo > span > a")
+    public WebElement plusBtn;
 
     @FindBy(css = "#collapseTwo > div > div:nth-child(1) > div:nth-child(1) > div > input")
-    public WebElement staffRemoval;
+    public WebElement equipeNecessariaParaRemocao;
 
     @FindBy(css = "#collapseTwo > div > div:nth-child(1) > div:nth-child(2) > div > input")
-    public WebElement infrastructureRemoval;
+    public WebElement infrastruturaNecessariaParaRemocao;
 
     @FindBy(css = "#collapseTwo > div > div:nth-child(2) > div:nth-child(1) > div > input")
-    public WebElement removalCost;
+    public WebElement custoAproximadoRemocao;
 
     @FindBy(css = "#collapseTwo > div > div:nth-child(2) > div:nth-child(2) > select")
-    public WebElement situation;
+    public WebElement situacao;
 
     @FindBy(css = "div.right-side > button")
-    public WebElement saveBtn;
+    public WebElement salvarBtn;
 
     @FindBy(id = "swal2-title")
     public WebElement adicionado;

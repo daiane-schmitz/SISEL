@@ -40,6 +40,7 @@ public class Browser {
         driver = null;
     }
 
+
     public static void loadPage(String url) { getCurrentDriver().get(url);
     }
 
