@@ -3,10 +3,7 @@ package tests;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.Test;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
-import pageObjects.MaterialDetails;
-import pageObjects.MaterialPage;
+import pageObjects.*;
 import utils.Browser;
 import utils.Utils;
 
@@ -46,35 +43,51 @@ public class SetupTests extends BaseTests {
     public void testAddMaterialSucata(){
         HomePage homePage = new HomePage();
         MaterialPage materialPage = new MaterialPage();
+        NewMaterial newMaterial = new NewMaterial();
+        MaterialDetails materialDetails = new MaterialDetails();
 
         testLogin();
         homePage.clickMaterialBtn();
         assertTrue(materialPage.isMaterialPage());
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/material-list")));
         materialPage.addMaterial();
-        materialPage.selectMaterialCategorySucata();
-        materialPage.selectMaterialTypeMetalica();
-        materialPage.selectMaterialSubtype();
-        materialPage.selectInstallation();
-        materialPage.selectLinking();
-        materialPage.selectDestinationAlienacao();
-        materialPage.fillJustification();
-        materialPage.checkLocation();
-        materialPage.selectInstallationWarehouse();
-        materialPage.fillStaffRemoval();
-        materialPage.fillInfrastructureRemoval();
-        materialPage.fillRemovalCost();
-        materialPage.selectSituation();
-        materialPage.clickSaveBtn();
-        assertTrue(materialPage.isTextAdicionado());
-        materialPage.clickOKBtn();
+        newMaterial.selectMaterialCategorySucata();
+        newMaterial.selectMaterialTypeMetalica();
+        newMaterial.selectMaterialSubtype();
+        newMaterial.selectInstallation();
+        newMaterial.selectLinking();
+        newMaterial.selectDestinationAlienation();
+        newMaterial.fillJustification();
+        newMaterial.checkLocation();
+        newMaterial.selectInstallationAlienation();
+        newMaterial.fillStaffRemoval();
+        newMaterial.fillInfrastructureRemoval();
+        newMaterial.fillRemovalCost();
+        newMaterial.selectSituation();
+
+
+        newMaterial.clickPlusBtn();
+
+
+        materialDetails.fillItemCode();
+        materialDetails.fillStandardizedName();
+        materialDetails.fillItemDescription();
+        materialDetails.selectUnity();
+        materialDetails.fillAmount();
+        materialDetails.clickSalvarBtn();
+
+
+        newMaterial.clickSaveBtn();
+        assertTrue(newMaterial.isTextAdicionado());
+        newMaterial.clickOKBtn();
     }
 
     @Test
-    @Story("Adicionar novo material: Equipamento")
+    @Story("Adicionar novo material: Equipamento - Com detalhes")
     public void testAddMaterialEquipamento() {
         HomePage homePage = new HomePage();
         MaterialPage materialPage = new MaterialPage();
+        NewMaterial newMaterial = new NewMaterial();
         MaterialDetails materialDetails = new MaterialDetails();
 
         testLogin();
@@ -84,19 +97,16 @@ public class SetupTests extends BaseTests {
 
         //Adicionar material
         materialPage.addMaterial();
-        materialPage.selectMaterialCategoryEquipamento();
-        materialPage.selectMaterialTypeDisjuntor();
-        materialPage.selectInstallation();
-        materialPage.selectDestinationEstoque();
-        materialPage.fillJustification();
-        materialPage.selectInstallationWarehouse();
-        materialPage.fillStaffRemoval();
-        materialPage.fillInfrastructureRemoval();
-        materialPage.fillRemovalCost();
-        materialPage.selectSituation();
+        newMaterial.selectMaterialCategoryEquipamento();
+        newMaterial.selectMaterialTypeDisjuntor();
+        newMaterial.selectInstallation();
+        newMaterial.selectDestinationStock();
+        newMaterial.fillJustification();
+        newMaterial.selectInstallationStock();
 
-        //Clicar no + para ir para os detalhes
-        materialPage.clickPlusBtn();
+
+       //Clicar no + para ir para os detalhes ------ não salva quando adicionados os detalhes
+        newMaterial.clickPlusBtn();
 
 
         materialDetails.fillItemCode();
@@ -112,10 +122,18 @@ public class SetupTests extends BaseTests {
         materialDetails.clickSalvarBtn();
 
 
+        newMaterial.fillStaffRemoval();
+        newMaterial.fillInfrastructureRemoval();
+        newMaterial.fillRemovalCost();
+        newMaterial.selectSituation();
+
+
         //Salvar
-        materialPage.clickSaveBtn();
-        assertTrue(materialPage.isTextAdicionado());
-        materialPage.clickOKBtn();
+        newMaterial.clickSaveBtn();
+        assertTrue(newMaterial.isTextAdicionado());
+        newMaterial.clickOKBtn();
+
+
     }
 
 

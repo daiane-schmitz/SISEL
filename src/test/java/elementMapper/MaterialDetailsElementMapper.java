@@ -27,7 +27,7 @@ public class MaterialDetailsElementMapper {
     @FindBy(css = "#collapseOne > div > div:nth-child(2) > div:nth-child(3) > div > input")
     public WebElement numeroDoPatrimonio;
 
-    @FindBy(css = "app-form-patrimonial-material > div > div.modal-body > div.modal-footer > div.right-side > button")
+    @FindBy(css = "body > ngb-modal-window:nth-child(9) > div > div > app-form-patrimonial-material > div > div.modal-body > div.modal-footer > div.right-side > button")
     public WebElement salvarBtn;
 
     @FindBy(xpath = "/html/body/ngb-modal-window[2]/div/div/app-form-patrimonial-material/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[3]/div[1]/div/input")

@@ -51,6 +51,7 @@ public class MaterialDetails extends MaterialDetailsElementMapper {
     public void fillOperationalPosition(){
         posicaoOperacional.sendKeys("posição operacional");
     }
+
     public void fillSerialNumber(){
         numDeSerie.sendKeys("123456");
     }
