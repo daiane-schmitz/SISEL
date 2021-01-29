@@ -25,4 +25,8 @@ public class HomePage extends HomePageElementMapper {
     public void clickMaterialBtn(){
         materialBtn.click();
     }
+
+    public void clickLogoff(){
+        sairBtn.click();
+    }
 }

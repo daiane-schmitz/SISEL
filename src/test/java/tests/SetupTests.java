@@ -39,17 +39,27 @@ public class SetupTests extends BaseTests {
     }
 
     @Test
-    @Story("Adicionar novo material: Sucata")
-    public void testAddMaterialSucata(){
+    @Story("Entrar na página de materiais")
+    public void testEnterMaterialPage(){
         HomePage homePage = new HomePage();
         MaterialPage materialPage = new MaterialPage();
-        NewMaterial newMaterial = new NewMaterial();
-        MaterialDetails materialDetails = new MaterialDetails();
 
         testLogin();
         homePage.clickMaterialBtn();
         assertTrue(materialPage.isMaterialPage());
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/material-list")));
+    }
+
+
+    @Test
+    @Story("Adicionar novo material: Sucata")
+    public void testAddMaterialSucata(){
+        MaterialPage materialPage = new MaterialPage();
+        NewMaterial newMaterial = new NewMaterial();
+        MaterialDetails materialDetails = new MaterialDetails();
+
+        testEnterMaterialPage();
+
         materialPage.addMaterial();
         newMaterial.selectMaterialCategorySucata();
         newMaterial.selectMaterialTypeMetalica();
@@ -85,15 +95,11 @@ public class SetupTests extends BaseTests {
     @Test
     @Story("Adicionar novo material: Equipamento - Com detalhes")
     public void testAddMaterialEquipamento() {
-        HomePage homePage = new HomePage();
         MaterialPage materialPage = new MaterialPage();
         NewMaterial newMaterial = new NewMaterial();
         MaterialDetails materialDetails = new MaterialDetails();
 
-        testLogin();
-        homePage.clickMaterialBtn();
-        assertTrue(materialPage.isMaterialPage());
-        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/material-list")));
+        testEnterMaterialPage();
 
         //Adicionar material
         materialPage.addMaterial();
@@ -132,9 +138,61 @@ public class SetupTests extends BaseTests {
         newMaterial.clickSaveBtn();
         assertTrue(newMaterial.isTextAdicionado());
         newMaterial.clickOKBtn();
-
-
     }
 
+    @Test
+    @Story("Pesquisar por palavra-chave")
+    public void testSearchByKeyWord(){
+        MaterialPage materialPage = new MaterialPage();
 
+        testEnterMaterialPage();
+        materialPage.SearchKeyWord();
+        materialPage.ClickSearchBtn();
+
+        //não consigo fazer assert porque a palavra não aparece nas pesquisas (evidência do allure é mais útil)
+    }
+
+    @Test
+    @Story("Pesquisar por local")
+    public void testSearchByLocation(){
+        MaterialPage materialPage = new MaterialPage();
+
+        testEnterMaterialPage();
+        materialPage.SearchLocation();
+        materialPage.ClickSearchBtn();
+        assertTrue(materialPage.isLocalDeTestesUm());
+    }
+
+    @Test
+    @Story("Pesquisar por categoria")
+    public void testSearchByCategory(){
+        MaterialPage materialPage = new MaterialPage();
+
+        testEnterMaterialPage();
+        materialPage.SearchCategory();
+        materialPage.ClickSearchBtn();
+        assertTrue(materialPage.isCategoryEquipamento());
+    }
+
+    @Test
+    @Story("Pesquisar por situação")
+    public void testSearchBySituation(){
+        MaterialPage materialPage = new MaterialPage();
+
+        testEnterMaterialPage();
+        materialPage.SearchSituation();
+        materialPage.ClickSearchBtn();
+        //não consigo fazer assert porque a palavra não aparece nas pesquisas (evidência do allure é mais útil)
+    }
+
+    @Test
+    @Story("Fazer logoff")
+    public void testLogoff(){
+        HomePage homePage = new HomePage();
+
+        testLogin();
+        homePage.clickLogoff();
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/login")));
+
+    }
 }
