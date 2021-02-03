@@ -62,4 +62,7 @@ public class MaterialPage extends MaterialPageElementMapper {
         return getTextEquipamento().equals("Equipamento");
     }
 
+    public void clickUpdateBtn(){
+        atualizarBtn.click();
+    }
 }

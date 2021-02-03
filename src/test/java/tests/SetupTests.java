@@ -185,6 +185,18 @@ public class SetupTests extends BaseTests {
         //não consigo fazer assert porque a palavra não aparece nas pesquisas (evidência do allure é mais útil)
     }
 
+
+    @Test
+    @Story("Atualizar a página")
+    public void testUpdatePageMaterialPage(){
+        MaterialPage materialPage = new MaterialPage();
+
+        testSearchByCategory();
+        materialPage.clickUpdateBtn();
+        //não consigo fazer assert
+    }
+
+
     @Test
     @Story("Fazer logoff")
     public void testLogoff(){
@@ -193,6 +205,7 @@ public class SetupTests extends BaseTests {
         testLogin();
         homePage.clickLogoff();
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("#/login")));
-
     }
+
+
 }

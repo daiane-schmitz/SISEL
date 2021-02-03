@@ -32,4 +32,6 @@ public class MaterialPageElementMapper {
     @FindBy(css = "app-material-list > div > div > div > div > div > div:nth-child(3) > div:nth-child(1) > div > label")
     public WebElement categoriaEquipamento;
 
+    @FindBy(css = "#button-addon4 > button:nth-child(2)")
+    public WebElement atualizarBtn;
 }
